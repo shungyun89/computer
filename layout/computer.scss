@@ -36,7 +36,7 @@ li {
 //背景 
 .wrap {
     width: 80em;
-    height: 80em;
+    height: 60em;
     background: #E8E8E8 0% 0% no-repeat padding-box;
     margin: 0 auto;
     padding-top: 5em;
@@ -47,16 +47,36 @@ li {
 
 //計算機
 .computer {
-    width: 40em;
-    height: 60em;
-    background: rgb(237, 175, 175);
+    width: 350px;
+    height: 630px;
+    background: #062145 0% 0% no-repeat padding-box;
+    border-radius: 30px;
+    color: #E8E8E8;
 }
 
 //畫面
 .screen {
-    width: 40em;
-    height: 10em;
-    display: flex;
+    width: 350px;
+    height: 130px;
+    background: #041936 0% 0% no-repeat padding-box;
+    border-radius: 35px;
+}
+
+.formula {
+    width: auto;
+    height: 10px;
+    padding: 20px;
+    text-align: right;
+    font-size: 16px;
+}
+
+.ans {
+    width: auto;
+    height: 80px;
+    padding: 10px;
+    text-align: right;
+    font-size: 42px;
+
 }
 
 //中間全部的按鈕
@@ -67,9 +87,10 @@ li {
 
 //數字按紐匡
 .number-button-body {
-    width: 30em;
-    height: 40em;
+    width: 350px;
+    height: 400px;
     display: flex;
+    align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -77,19 +98,22 @@ li {
 
 //數字按鈕
 .number-button {
-    width: 8em;
-    height: 8em;
-    line-height: 8em;
+    width: 72px;
+    height: 64px;
+    line-height: 64px;
     text-align: center;
     border-radius: 16px;
+    font-size: 24px;
     align-items: center;
 }
 
 //加減乘除按鈕匡
 .operation-button-body {
-    width: 10em;
-    height: 40em;
+    width: 72px;
+    height: 400px;
+    line-height: 64px;
     display: flex;
+    align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -97,26 +121,39 @@ li {
 
 //加減乘除按鈕
 .operation-button {
-    width: 8em;
-    height: 8em;
-    line-height: 8em;
+    width: 72px;
+    height: 64px;
+    line-height: 64px;
+    font-size: 24px;
     text-align: center;
     border-radius: 16px;
     align-items: center;
 }
 
 .ac-body {
-    width: 40em;
-    height: 10em;
+    width: 350px;
+    height: 65px;
+    line-height: 64px;
     display: flex;
     justify-content: space-around;
 }
 
 .ac-button {
-    width: 8em;
-    height: 8em;
-    line-height: 8em;
+    width: 72px;
+    height: 64px;
+    line-height: 64px;
     text-align: center;
     border-radius: 16px;
     align-items: center;
+}
+
+.ac-button-equal {
+    width: 144px;
+    height: 64px;
+    line-height: 64px;
+    text-align: center;
+    border-radius: 16px;
+    align-items: center;
+    background: transparent linear-gradient(90deg, #00C4FF 0%, #6C00FF 100%) 0% 0% no-repeat padding-box;
+    ;
 }
