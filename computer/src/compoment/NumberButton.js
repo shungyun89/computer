@@ -4,7 +4,7 @@
 
 const NumberButton = (props) =>  {
 
-const {setnumber} = props
+    const {setnumber} = props
 
     return(
         <>

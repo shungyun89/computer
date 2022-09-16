@@ -1,12 +1,11 @@
-
+//hooks
 import  {useState} from 'react';
-
-
+//conpoment
 import NumberButton from './compoment/NumberButton';
 import OperationButton from './compoment/OperationButton';
 import ReturnButton from './compoment/ReturnButton';
 import Screen from './compoment/Screen';
-
+//css
 import './computer.scss'
 
 
