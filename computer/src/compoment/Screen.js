@@ -13,7 +13,7 @@ const {number} = props
                 12+12
             </div>
             <div class="ans">
-                {number}
+                <input type="text" id="iput" readonly />
             </div>
         </>
     )

@@ -9,20 +9,19 @@ import Screen from './compoment/Screen';
 import './computer.scss'
 
 
-function App() {
+function App(props) {
 
 
-    const [number, setnumber] = useState('')
-
+    const [number, setnumber] = useState('')    
+    
+        
     return (
         <div>
             <div className="wrap">
                 <div className="computer">
-                    <div className="screen">
-                        <Screen number={number}/>
-                    </div>
+                    <Screen />
                     <div className="center-button">
-                        <NumberButton setnumber={setnumber}/>
+                        <NumberButton setnumber={setnumber} />
                         <OperationButton />
                     </div>
                     <div className="ac-body">
