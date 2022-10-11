@@ -2,14 +2,24 @@
 
 
 
-const ReturnButton = () => {
+const ReturnButton = (props) => {
 
+    const {setnum,num} = props
 
+    const clearClick = () => {
+        setnum("")
+    }
+    const backClick = () => {
+        setnum(num.slice(0, -1))
+    }
+    const calculate = () => {
+        setnum(parseFloat(eval(num)).toPrecision().toString())
+    }
     return (
         <>
-            <div class="ac-button">AC</div>
-            <div class="ac-button">‣</div>
-            <div class="ac-button-equal">=</div>
+            <div className="ac-button" onClick={clearClick}>AC</div>
+            <div className="ac-button" onClick={backClick}>‣</div>
+            <div className="ac-button-equal" onClick={calculate}>=</div>
         </>
     )
 }

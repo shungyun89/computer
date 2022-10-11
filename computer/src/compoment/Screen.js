@@ -4,16 +4,16 @@
 const Screen = (props) => {
 
 
-const {number} = props
+const {num} = props
 
 
     return (
         <>
-            <div class="formula">
+            <div className="formula">
                 12+12
             </div>
-            <div class="ans">
-                {number}
+            <div className="ans">
+                {num}
             </div>
         </>
     )

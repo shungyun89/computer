@@ -1,7 +1,7 @@
 //hooks
 import  {useState} from 'react';
 //conpoment
-import NumberButton from './compoment/NumberButton';
+import Number from './compoment/Number';
 import OperationButton from './compoment/OperationButton';
 import ReturnButton from './compoment/ReturnButton';
 import Screen from './compoment/Screen';
@@ -9,26 +9,30 @@ import Screen from './compoment/Screen';
 import './computer.scss'
 
 
+
 function App(props) {
-
-
-    const [number, setnumber] = useState('')    
-    
         
+    const numarr = []
+
+    const [num, setnum] = useState("")
+
+
+
     return (
         <div>
             <div className="wrap">
                 <div className="computer">
-                    <Screen />
+                    <Screen num={num} />
                     <div className="center-button">
-                        <NumberButton setnumber={setnumber} />
-                        <OperationButton />
+                        <Number setnum={setnum} num={num} />
+                        <OperationButton setnum={setnum} num={num}/>
                     </div>
                     <div className="ac-body">
-                        <ReturnButton />
+                        <ReturnButton setnum={setnum} num={num} />
                     </div>
                 </div>
             </div>
+            <button onClick={()=>{console.log(numarr)}}></button>
         </div>
     );
 }
