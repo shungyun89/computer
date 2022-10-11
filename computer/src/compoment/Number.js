@@ -5,6 +5,7 @@ import NumberButton from "./NumberButton"
 const Number = (props) =>  {
 
     const {setnum,num} = props
+    
     const handleClick = (e) => {
         setnum(num.concat(e.target.id))
     }
@@ -21,7 +22,7 @@ const Number = (props) =>  {
                 <NumberButton id="8" value="8" onClick={handleClick}/>
                 <NumberButton id="9" value="9" onClick={handleClick}/>
                 <NumberButton id="0" value="0" onClick={handleClick}/>
-                <NumberButton id="00" value="00" onClick={num==0?console.log():handleClick}/>
+                <NumberButton id="00" value="00" onClick={num===0?console.log():handleClick}/>
                 <NumberButton id='.' value='.' onClick={handleClick} />
             </div>
     )

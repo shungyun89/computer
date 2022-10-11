@@ -2,11 +2,11 @@
 
 
 const OperationButton = (props) => {
-    
+
     const {setnum, num} = props
+    
     const handleClick = (e) =>{
         setnum(num.concat(e.target.id))
-        console.log(num);
     }
 
     return(
