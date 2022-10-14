@@ -12,13 +12,14 @@ const Number = (props) =>  {
     
 
     const pointClick = (e) => {
-        const numpoint = num.indexOf('.')
+        const numPoint = num.indexOf('.')
         const numLast = num.length-1
-        if(num[num.length - 1] === undefined) {
+
+        if(num[numLast] === undefined) {
             setnum('0' + (e.target.id))
-        }else if(numpoint === -1) {
+        }else if(numPoint === -1) {
             setnum(num.concat(e.target.id))
-        }else if(numpoint > -1 ){
+        }else if(numPoint > -1 ){
             setnum(num)
         }
     }

@@ -13,7 +13,7 @@ const ReturnButton = (props) => {
         setnum(num.slice(0, -1))
     }
     const calculate = () => {
-        setnum(parseFloat(eval(num)).toPrecision().toString())
+        setnum(Number(parseFloat(eval(num)).toPrecision().toString()))
     }
     return (
         <>
