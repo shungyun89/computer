@@ -28,7 +28,7 @@ const OperationButton = (props) => {
                 setnum(num.concat(e.target.id))
                 break;
         }
-        }
+    }
 
     return(
         
