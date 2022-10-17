@@ -4,10 +4,10 @@ import NumberButton from "./NumberButton"
 
 const Number = (props) =>  {
 
-    const {setnum,num} = props
+    const {setnum, num, newarr, setnewarr} = props
 
     const handleClick = (e) => {
-            setnum(num.concat(e.target.id))
+            setnum(num + (e.target.id))
     }
     
 
@@ -18,7 +18,7 @@ const Number = (props) =>  {
         if(num[numLast] === undefined) {
             setnum('0' + (e.target.id))
         }else if(numPoint === -1) {
-            setnum(num.concat(e.target.id))
+            setnum(num + (e.target.id))
         }else if(numPoint > -1 ){
             setnum(num)
         }

@@ -4,16 +4,24 @@
 
 const ReturnButton = (props) => {
 
-    const {setnum,num} = props
+    const {setnum, num, newarr, setnewarr} = props
+
 
     const clearClick = () => {
+        setnewarr([])
         setnum("")
     }
     const backClick = () => {
         setnum(num.slice(0, -1))
     }
     const calculate = () => {
-        setnum(Number(parseFloat(eval(num)).toPrecision().toString()))
+        // setnewarr(Number(parseFloat(eval(num)).toPrecision().toString()))
+        // console.log(newarr);
+        // if(newarr[1] ==='+'){
+        //     console.log(newarr);
+        //     setnewarr(Number(parseFloat(newarr[0]+num).toPrecision(12)))
+        //     console.log(newarr);
+        // }
     }
     return (
         <>

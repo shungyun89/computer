@@ -6,6 +6,7 @@ const Screen = (props) => {
 
 const {num} = props
 
+    
 
     return (
         <>

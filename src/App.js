@@ -12,27 +12,25 @@ import './computer.scss'
 
 function App(props) {
         
-    const numarr = []
-
     const [num, setnum] = useState("")
 
-    
+    const [newarr, setnewarr] = useState([])
 
     return (
         <div>
             <div className="wrap">
                 <div className="computer">
-                    <Screen num={num} />
+                    <Screen num={num} newarr={newarr} />
                     <div className="center-button">
-                        <Number setnum={setnum} num={num} />
-                        <OperationButton setnum={setnum} num={num}/>
+                        <Number setnum={setnum} num={num} setnewarr />
+                        <OperationButton setnum={setnum} num={num} newarr={newarr} setnewarr={setnewarr} />
                     </div>
                     <div className="ac-body">
-                        <ReturnButton setnum={setnum} num={num} />
+                        <ReturnButton setnum={setnum} num={num} newarr={newarr} setnewarr={setnewarr} />
                     </div>
                 </div>
             </div>
-            <button onClick={()=>{console.log(numarr)}}></button>
+            <button className='number-button' onClick={()=>{console.log(newarr)}}></button>
         </div>
     );
 }
