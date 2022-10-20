@@ -4,23 +4,28 @@ import NumberButton from "./NumberButton"
 
 const Number = (props) =>  {
 
-    const {setnum, num, newarr, setnewarr} = props
+    const {setnum, num, setanswer} = props
 
     const handleClick = (e) => {
             setnum(num + (e.target.id))
+            setanswer((num + (e.target.id)))
     }
     
 
     const pointClick = (e) => {
         const numPoint = num.indexOf('.')
         const numLast = num.length-1
+        const buttonId = e.target.id
 
         if(num[numLast] === undefined) {
-            setnum('0' + (e.target.id))
+            setnum('0' + (buttonId))
+            setanswer('0' + (buttonId))
         }else if(numPoint === -1) {
-            setnum(num + (e.target.id))
+            setnum(num + (buttonId))
+            setanswer('0' + (buttonId))
         }else if(numPoint > -1 ){
             setnum(num)
+            setanswer('0' + (buttonId))
         }
     }
 
