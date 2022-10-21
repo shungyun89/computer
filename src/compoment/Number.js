@@ -22,10 +22,10 @@ const Number = (props) =>  {
             setanswer('0' + (buttonId))
         }else if(numPoint === -1) {
             setnum(num + (buttonId))
-            setanswer('0' + (buttonId))
+            setanswer(num + (buttonId))
         }else if(numPoint > -1 ){
             setnum(num)
-            setanswer('0' + (buttonId))
+            setanswer(num)
         }
     }
 
