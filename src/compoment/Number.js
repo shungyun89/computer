@@ -2,12 +2,12 @@ import NumberButton from "./NumberButton"
 // import { useState } from "react"
 
 
-const Number = (props) =>  {
+const Number = (props) => {
 
     const {setnum, num, setanswer} = props
 
     const handleClick = (e) => {
-            setnum(num + (e.target.id))
+            setnum(currentNum => { return currentNum + (e.target.id) })
             setanswer((num + (e.target.id)))
     }
     

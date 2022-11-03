@@ -3,7 +3,7 @@
 
 const OperationButton = (props) => {
 
-    const {setnum, num, newarr, setnewarr, setanswer, answer} = props
+    const {setnum, num, newarr, setnewarr, setanswer} = props
 
     
     const OperationClick = (e) => {
