@@ -13,7 +13,7 @@ import './computer.scss'
 function App(props) {
         
     const [num, setnum] = useState("")
-    const [answer, setanswer] = useState()
+    const [answer, setanswer] = useState('')
     const [newarr, setnewarr] = useState([])
 
     return (

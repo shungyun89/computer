@@ -1,77 +1,58 @@
-
-
-
 const OperationButton = (props) => {
-
-    const {setnum, num, newarr, setnewarr, setanswer} = props
-
-    
-    const OperationClick = (e) => {
-        const buttonId = e.target.id
-        if(newarr.length === 0){
-            setnewarr(newarr => [...newarr, num])
-            setnewarr(newarr => [...newarr, (buttonId)])
-            setnum('')
-            setanswer('')
-        }else {
-            switch (newarr[1]) {
-                case '+':
-                    if (num === '') {
-                        setnum(0)
-                    }
-                    console.log(newarr[0]);
-                    console.log(num); 
-                    setnewarr(newarr => [Number(parseFloat(Number(newarr[0]) + Number(num)).toPrecision(12)),buttonId])
-                    setnum('')
-                    setanswer(Number(parseFloat(Number(newarr[0]) + Number(num)).toPrecision(12)))
-                    break;
-                case '-':
-                    if (num === '') {
-                        setnum(0)
-                    }
-                    console.log(newarr[0]);
-                    console.log(num); 
-                    setnewarr(newarr => [Number(parseFloat(Number(newarr[0]) - Number(num)).toPrecision(12)),buttonId])
-                    setnum('')
-                    setanswer(Number(parseFloat(Number(newarr[0]) - Number(num)).toPrecision(12)))
-                    break;
-                case '*':
-                    if (num === '') {
-                        setnum(1)
-                    }
-                    console.log(newarr[0]);
-                    console.log(num); 
-                    setnewarr(newarr => [Number(parseFloat(Number(newarr[0]) * Number(num)).toPrecision(12)),buttonId])
-                    setnum('')
-                    setanswer(Number(parseFloat(Number(newarr[0]) * Number(num)).toPrecision(12)))
-                    break;
-                case '/':
-                    if (num === '') {
-                        setnum(1)
-                    }
-                    console.log(newarr[0]);
-                    console.log(num); 
-                    setnewarr(newarr => [Number(parseFloat(Number(newarr[0]) / Number(num)).toPrecision(12)),buttonId])
-                    setnum('')
-                    setanswer(Number(parseFloat(Number(newarr[0]) / Number(num)).toPrecision(12)))
-                    break;          
-                default:
-                    break;
-            }
-        }
-    }
-    console.log(newarr);
-
-    return(
-        
-        <div className="operation-button-body">
-            <div className="operation-button" id="+" onClick={OperationClick}>+</div>
-            <div className="operation-button" id="-" onClick={OperationClick}>-</div>
-            <div className="operation-button" id="*" onClick={OperationClick}>*</div>
-            <div className="operation-button" id="/" onClick={OperationClick}>/</div>   
+    const { setnum, num, newarr, setnewarr, setanswer } = props;
+  
+    const performOperation = (operator, a, b) => {
+      switch (operator) {
+        case "+":
+          return a + b;
+        case "-":
+          return a - b;
+        case "*":
+          return a * b;
+        case "/":
+          return a / b;
+        default:
+          throw new Error(`Unknown operator: ${operator}`);
+      }
+    };
+  
+    const handleOperationClick = (e) => {
+      const operator = e.target.id;
+  
+      if (newarr.length === 0) {
+        setnewarr([num, operator]);
+        setnum("");
+        setanswer("");
+      } else {
+        const [prevValue, prevOperator] = newarr;
+        const currentValue = num ? Number(num) : 0;
+  
+        const newValue = performOperation(prevOperator, Number(prevValue), currentValue);
+        setnewarr([newValue, operator]);
+        setnum("");
+        setanswer(newValue);
+      }
+    };
+  
+    return (
+      <div className="operation-button-body">
+        <div className="operation-button" id="+" onClick={handleOperationClick}>
+          +
         </div>
-    )
-}
-
-
-export default OperationButton
+        <div className="operation-button" id="-" onClick={handleOperationClick}>
+          -
+        </div>
+        <div className="operation-button" id="*" onClick={handleOperationClick}>
+          x
+        </div>
+        <div className="operation-button" id="/" onClick={handleOperationClick}>
+          ÷
+        </div>
+        <div className="operation-button" id="=" onClick={handleOperationClick}>
+          =
+        </div>
+      </div>
+    );
+  };
+  
+  export default OperationButton;
